@@ -555,22 +555,22 @@ Before opening a pull request, please confirm:
 
 ### Good First Issues
 
-If you're looking for somewhere to start, these are high-value and well-scoped:
+If you're looking for somewhere to start to improve, these are high-value and well-scoped:
 
 | Label | Task | Difficulty |
 |-------|------|------------|
-| `plugin/db` | MySQL connector | ⭐ Easy |
-| `plugin/db` | SQLite connector | ⭐ Easy |
-| `plugin/er` | Mermaid `erDiagram` parser | ⭐ Easy |
-| `plugin/er` | PlantUML entity parser | ⭐ Easy |
-| `plugin/er` | dbdiagram.io JSON parser | ⭐⭐ Medium |
-| `plugin/er` | draw.io XML parser | ⭐⭐ Medium |
-| `plugin/db` | MSSQL connector | ⭐⭐ Medium |
-| `plugin/db` | Oracle connector | ⭐⭐ Medium |
-| `plugin/er` | Lucidchart `.vsdx` parser | ⭐⭐⭐ Hard |
-| `plugin/er` | PNG/JPG image → LLM vision parser | ⭐⭐⭐ Hard |
-| `plugin/db` | Snowflake connector | ⭐⭐⭐ Hard |
-| `core` | Async parallel batch loading | ⭐⭐⭐ Hard |
+| `plugin/db` | MySQL connector | ⭐ Easy | Already done
+| `plugin/db` | SQLite connector | ⭐ Easy | Already done
+| `plugin/er` | Mermaid `erDiagram` parser | ⭐ Easy | Already done
+| `plugin/er` | PlantUML entity parser | ⭐ Easy | Already done
+| `plugin/er` | dbdiagram.io JSON parser | ⭐⭐ Medium | Already done
+| `plugin/er` | draw.io XML parser | ⭐⭐ Medium | Already done
+| `plugin/db` | MSSQL connector | ⭐⭐ Medium | Already done
+| `plugin/db` | Oracle connector | ⭐⭐ Medium | Already done
+| `plugin/er` | Lucidchart `.vsdx` parser | ⭐⭐⭐ Hard | Already done
+| `plugin/er` | PNG/JPG image → LLM vision parser | ⭐⭐⭐ Hard | Already done
+| `plugin/db` | Snowflake connector | ⭐⭐⭐ Hard | Already done
+| `core` | Async parallel batch loading | ⭐⭐⭐ Hard | Already done
 
 Browse [open issues](https://github.com/dhirajpatra/rdb2graph/issues) and look for `good-first-issue` tags.
 
