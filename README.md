@@ -575,6 +575,8 @@ If you're looking for somewhere to start to improve, these are high-value and we
 | `plugin/db` | Snowflake connector | ⭐⭐⭐ Hard | Already done
 | `core` | Async parallel batch loading | ⭐⭐⭐ Hard | Already done
 
+or If you want to build a multi agent application as wrapper of this application then find out more about it in [future-multi-agents-readme.md](future-multi-agents-readme.md). Hope you are ready to contribute so that many users can get use them for their real use. Thanks
+
 Browse [open issues](https://github.com/dhirajpatra/rdb2graph/issues) and look for `good-first-issue` tags.
 
 ---
