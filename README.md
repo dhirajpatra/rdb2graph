@@ -41,6 +41,9 @@ Before (generic ETL):                After (rdb2graph):
 
 Beyond migration, rdb2graph enriches the graph with **vector embeddings** (for semantic/similarity search), **full-text indexes**, and **KG provenance metadata** — ready for RAG pipelines, graph analytics, and LLM-powered applications.
 
+Also I have a plan to make a multi agents wrapper onver this application. So that we can make this application fully automated with Agentic AI. Find out more about it in [future-multi-agents-readme.md](future-multi-agents-readme.md)
+
+
 ---
 
 ## Features
