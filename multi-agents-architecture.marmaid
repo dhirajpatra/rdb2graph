@@ -1,0 +1,39 @@
+graph TD
+    subgraph "Relational DB (Source)"
+        RDB_Schema[Schema/Metadata]
+        RDB_Data[Table Data]
+    end
+
+    subgraph "Agentic RDB2Graph System (CrewAI)"
+        %% Define Agents
+        Agent_Schema[Database Schema Architect]
+        Agent_Modeler[Graph Modeler]
+        Agent_Migrator[Data Migration Engineer]
+
+        %% Define Task Flow
+        Task1[Task: Extract Schema] -->|Outputs Schema Map| Task2[Task: Design Graph Model]
+        Task2 -->|Outputs Mapping Config| Task3[Task: Execute Migration]
+
+        %% Assign Agents to Tasks
+        Agent_Schema -.-> Task1
+        Agent_Modeler -.-> Task2
+        Agent_Migrator -.-> Task3
+    end
+
+    subgraph "Knowledge Graph (Target)"
+        Graph_DB[Property Graph (Nodes/Edges)]
+    end
+
+    %% Data and Logic flow
+    RDB_Schema -.->|Read| Agent_Schema
+    Agent_Migrator -.->|Read Data| RDB_Data
+    Agent_Migrator -.->|Write Graph| Graph_DB
+
+    %% Styling
+    classDef agent fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef task fill:#ccf,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+    classDef db fill:#ff9,stroke:#333,stroke-width:1px;
+
+    class Agent_Schema,Agent_Modeler,Agent_Migrator agent;
+    class Task1,Task2,Task3 task;
+    class RDB_Schema,RDB_Data,Graph_DB db;
