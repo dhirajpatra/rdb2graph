@@ -1,0 +1,25 @@
+# rdb2graph — Python dependencies
+# Install: pip install -r requirements.txt
+
+# Neo4j
+neo4j>=5.0.0
+
+# Source DB drivers
+psycopg2-binary>=2.9.0          # PostgreSQL (primary)
+# mysql-connector-python>=8.0.0  # MySQL (uncomment if needed)
+# pyodbc>=4.0.0                  # MSSQL (uncomment if needed)
+# cx-Oracle>=8.0.0               # Oracle (uncomment if needed)
+
+# Generic DB abstraction (fallback)
+SQLAlchemy>=2.0.0
+
+# Embeddings
+sentence-transformers>=2.2.0
+
+# Config & CLI
+PyYAML>=6.0
+python-dotenv>=1.0.0
+
+# Progress & Logging
+tqdm>=4.65.0
+colorlog>=6.7.0

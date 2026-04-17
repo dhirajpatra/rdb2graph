@@ -1,0 +1,67 @@
+# ============================================================
+# rdb2graph - Relational DB → Neo4j Knowledge Graph Pipeline
+# ============================================================
+
+# --- Source ER Diagram ---
+er_diagram:
+  path: "./er_diagram.mwb"          # Path to .mwb file (MySQL Workbench)
+  format: "mwb"                      # mwb | ddl | dbdiagram_json | image
+  # future formats: ddl, dbdiagram_json, image (via LLM vision)
+
+# --- Source Relational Database ---
+source_db:
+  type: "postgresql"                 # postgresql | mysql | mssql | oracle
+  host: "localhost"
+  port: 5432
+  database: "your_database"
+  user: "your_user"
+  password: "your_password"
+  schema: "public"                   # PostgreSQL schema
+  # Optional: SSL
+  ssl: false
+  # Batch size for reading rows
+  batch_size: 500
+
+# --- Neo4j Target ---
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: "your_neo4j_password"
+  database: "neo4j"                  # Neo4j 5.x database name
+  batch_size: 500                    # Rows per UNWIND batch
+  # Connection pool
+  max_connection_pool_size: 50
+
+# --- Embeddings (for KG semantic enrichment) ---
+embeddings:
+  enabled: true
+  model: "all-MiniLM-L6-v2"         # sentence-transformers model
+  # Which node properties to embed (per label) — empty = auto-detect text fields
+  # Example:
+  # Customer: ["name", "email"]
+  # Product: ["name", "description"]
+  property_map: {}
+  # Store embedding as property name
+  embedding_property: "embedding"
+
+# --- neo4j-etl-tool CLI ---
+neo4j_etl:
+  jar_path: "./neo4j-etl/neo4j-etl.jar"    # Path to neo4j-etl jar
+  # OR use docker image
+  use_docker: false
+  docker_image: "neo4j/neo4j-etl-tool:latest"
+  # Temp dir for CSV exports
+  csv_dir: "/tmp/rdb2graph_csv"
+
+# --- Pipeline Control ---
+pipeline:
+  stages:
+    - er_parse          # Stage 1: Parse .mwb → semantic model
+    - mapping_build     # Stage 2: Build enriched mapping.json
+    - etl_run           # Stage 3: Run neo4j-etl-tool
+    - post_enrich       # Stage 4: KG enrichment + embeddings
+  # Skip stages (useful for re-runs)
+  skip_stages: []
+  # On error: stop | continue | skip_stage
+  on_error: "stop"
+  log_level: "INFO"     # DEBUG | INFO | WARNING | ERROR
