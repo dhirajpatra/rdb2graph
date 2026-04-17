@@ -1,0 +1,3 @@
+# Choose ONE of the following depending on your LLM backend:
+anthropic>=0.25.0     # for Claude backend (default)
+# openai>=1.0.0       # for GPT-4o backend

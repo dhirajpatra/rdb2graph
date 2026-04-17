@@ -1,0 +1,2 @@
+# Optional: lxml>=4.9.0 for VSDX mode
+lxml>=4.9.0
